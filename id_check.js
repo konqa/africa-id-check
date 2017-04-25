@@ -1,6 +1,3 @@
-
-
-
 function check_id(clientId, clientCountry){
 
 if (clientCountry === 'ZW'){
@@ -20,8 +17,6 @@ if (clientCountry === 'ZW'){
 	//console.log("ID Queue Number is " + queueNumber);
 	console.log("Alphabet check letter is " + queueNumber % 23);
 
-
-
 }
 
 else if (clientCountry === 'ZA'){
@@ -34,29 +29,23 @@ else if (clientCountry === 'ZA'){
 	dob = clientId.slice(4, 6); 
 	console.log("Client was born on " + dob + "-" + mob + "-" + yob);
 
-	// District where family originates
-	//family_district = clientid.slice(-2); 
-
-
-
-
-
-
 }
 
 
 
 }
 
-
+// Impose Zimbabwean ID numbers
 var clientId1 = '631222666S70';
-var clientId1 = '631124875Y24';
-var clientId1 = '22218781Y00';
-var clientId1 = '24087395A24';
+var clientId1 = '631126875Y24';
+var clientId1 = '22214781Y00';
+var clientId1 = '24087995A24';
 
 var clientCountry1 = 'ZW';
 
+// Impose South Arican ID numbers
 var clientId2 = '8206160000000';
+
 var clientCountry2 = 'ZA';
 
 check_id(clientId1, clientCountry1);
