@@ -2,8 +2,27 @@
 
 function validateID(clientID, clientCountry) {
 
-if(clientCountry === "ZA"){
+if(clientCountry === "ZW"){
+	clientID = clientID.toString().replace(" ","");
+	clientID = clientID.toString().replace(" ","");
+	clientID = clientID.toString().replace("-","");
+var ZWIDRegEx = /^[0-9]{2}[0-9]{6,7}[a-zA-Z][0-9]{2}/;
+if (ZWIDRegEx.test(clientID)) return true; return false;
+}
 
+if(clientCountry === "NG"){
+	clientID = clientID.toString().replace(" ","");
+var NGIDRegEx = /^[0-9]{11}/;
+if (NGIDRegEx.test(clientID)) return true; return false;
+}
+
+if(clientCountry === "GM"){
+	clientID = clientID.toString().replace(" ","");
+var GMIDRegEx = /^[0-9]{11}/;
+if (GMIDRegEx.test(clientID)) return true; return false;
+}
+
+if(clientCountry === "ZA"){
 clientID = clientID.toString().replace(" ","");
 r = /^\d{10}[0-1]\d{2}$/;
 if (! r.test(clientID)) return false;
@@ -16,49 +35,45 @@ p3+= parseInt(p2[i]);
 }
 check = 10 - (p1 + p3).toString()[(p1 + p3).toString().length -1];
 check_char = check > 9 ? check.toString()[1] : check.toString();
-if (check_char != clientID[12]) return false;
-//return true;
-
-console.log(clientID + " is a valid SA ID Number.");
+if (check_char != clientID[12]) return false; return true;
 }
 
 }
-
 
 // Translate ID
 
-function translateID(clientId, clientCountry){
+function translateID(clientID, clientCountry){
 
 if (clientCountry === 'ZW'){
 
-	console.log(clientId);
+	console.log(clientID);
 
 	// District where ID was collected
-	collectionDistrict = clientId.slice(0, 2);
+	collectionDistrict = clientID.slice(0, 2);
 	console.log("ID was collected in District " + collectionDistrict);
 
-	// Village of origin
-	familyDistrict = clientId.slice(-2);
+	// Village of origin, usually from the paternal side
+	familyDistrict = clientID.slice(-2);
 	console.log("Client originates from Village " + familyDistrict);
 
-	// Verify letter
-	queueNumber = clientId.slice(2, -3);
-	console.log("ID Queue Number is " + queueNumber);
+	// Verify letter - Queue Number
+	queueNumber = clientID.slice(2, -3);
+	console.log("Unique Identifier is " + queueNumber);
 	//console.log("Alphabet check letter is " + queueNumber % 23);
 
 }
 
 else if (clientCountry === 'ZA'){
 
-	console.log(clientId);
+	console.log(clientID);
 
 	// Date of Birth
-	var yob = clientId.slice(0, 2);
-	var mob = clientId.slice(2, 4);
-	var dob = clientId.slice(4, 6);
+	var yob = clientID.slice(0, 2);
+	var mob = clientID.slice(2, 4);
+	var dob = clientID.slice(4, 6);
 
-	var gender = clientId.slice(7, 8);
-	var status = clientId.slice(10, 11);
+	var gender = clientID.slice(7, 8);
+	var status = clientID.slice(10, 11);
 
 	var clientGender = (gender > 4) ? "Female" : "Male";
 	var clientStatus = (status) ? "South African" : "Permanent Resident";
@@ -71,14 +86,21 @@ else if (clientCountry === 'ZA'){
 
 }
 
-var clientId1 = '631222666S70';
+var clientID1 = '631222666S70';
 var clientCountry1 = 'ZW';
 
-var clientId2 = '8207165128086';
+var clientID2 = '8207165128086';
 var clientCountry2 = 'ZA';
 
-translateID(clientId1, clientCountry1);
+var clientID3 = '82071651280';
+var clientCountry3 = 'NG';
 
-translateID(clientId2, clientCountry2);
+translateID(clientID1, clientCountry1);
 
-validateID(clientId2, clientCountry2);
+translateID(clientID2, clientCountry2);
+
+if(validateID(clientID2, clientCountry2)){
+	console.log("This is a valid South African ID Number.");
+} else {
+	console.log("This is not a valid South African ID Number.");
+}
