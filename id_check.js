@@ -1,4 +1,4 @@
-function check_id(clientId, clientCountry){
+function translate_id(clientId, clientCountry){
 
 if (clientCountry === 'ZW'){
 
@@ -48,6 +48,6 @@ var clientCountry1 = 'ZW';
 var clientId2 = '8207165128086';
 var clientCountry2 = 'ZA';
 
-check_id(clientId1, clientCountry1);
+translate_id(clientId1, clientCountry1);
 
-check_id(clientId2, clientCountry2);
+translate_id(clientId2, clientCountry2);
