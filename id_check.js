@@ -1,4 +1,33 @@
-function translate_id(clientId, clientCountry){
+// Validate ID
+
+function validateID(clientID, clientCountry) {
+
+if(clientCountry === "ZA"){
+
+clientID = clientID.toString().replace(" ","");
+r = /^\d{10}[0-1]\d{2}$/;
+if (! r.test(clientID)) return false;
+n = clientID;
+p1 = parseInt(n[0]) + parseInt(n[2]) + parseInt(n[4]) + parseInt(n[6]) + parseInt(n[8]) + parseInt(n[10]);
+p2 = (parseInt(n[1] + n[3] + n[5] + n[7] + n[9] + n[11]) * 2).toString();
+p3 = 0;
+for (i=0; i < p2.length; i++) {
+p3+= parseInt(p2[i]);
+}
+check = 10 - (p1 + p3).toString()[(p1 + p3).toString().length -1];
+check_char = check > 9 ? check.toString()[1] : check.toString();
+if (check_char != clientID[12]) return false;
+//return true;
+
+console.log(clientID + " is a valid SA ID Number.");
+}
+
+}
+
+
+// Translate ID
+
+function translateID(clientId, clientCountry){
 
 if (clientCountry === 'ZW'){
 
@@ -48,6 +77,8 @@ var clientCountry1 = 'ZW';
 var clientId2 = '8207165128086';
 var clientCountry2 = 'ZA';
 
-translate_id(clientId1, clientCountry1);
+translateID(clientId1, clientCountry1);
 
-translate_id(clientId2, clientCountry2);
+translateID(clientId2, clientCountry2);
+
+validateID(clientId2, clientCountry2);
