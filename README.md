@@ -1,2 +1,2 @@
-# africa-id-check
-Verify syntax of African National Identity Number
+# Africa ID Check
+Verify and translate African National Identity Numbers
