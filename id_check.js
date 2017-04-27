@@ -28,10 +28,10 @@ else if (clientCountry === 'ZA'){
 	var mob = clientId.slice(2, 4);
 	var dob = clientId.slice(4, 6);
 
-	var gender = clientId.slice(7, 10);
+	var gender = clientId.slice(7, 8);
 	var status = clientId.slice(10, 11);
 
-	var clientGender = (gender > 5000) ? "Female" : "Male";
+	var clientGender = (gender > 4) ? "Female" : "Male";
 	var clientStatus = (status) ? "South African" : "Permanent Resident";
 
 	console.log("Client was born on " + dob + "-" + mob + "-" + yob);
@@ -45,7 +45,7 @@ else if (clientCountry === 'ZA'){
 var clientId1 = '631222666S70';
 var clientCountry1 = 'ZW';
 
-var clientId2 = '8207165128085';
+var clientId2 = '8207165128086';
 var clientCountry2 = 'ZA';
 
 check_id(clientId1, clientCountry1);
