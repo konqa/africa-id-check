@@ -6,36 +6,36 @@ if(clientCountry === "ZW"){
 	clientID = clientID.toString().replace(" ","");
 	clientID = clientID.toString().replace(" ","");
 	clientID = clientID.toString().replace("-","");
-var ZWIDRegEx = /^[0-9]{2}[0-9]{6,7}[a-zA-Z][0-9]{2}/;
-if (ZWIDRegEx.test(clientID)) return true; return false;
+	var ZWIDRegEx = /^[0-9]{2}[0-9]{6,7}[a-zA-Z][0-9]{2}/;
+	if (ZWIDRegEx.test(clientID)) return true; return false;
 }
 
 if(clientCountry === "NG"){
 	clientID = clientID.toString().replace(" ","");
-var NGIDRegEx = /^[0-9]{11}/;
-if (NGIDRegEx.test(clientID)) return true; return false;
+	var NGIDRegEx = /^[0-9]{11}/;
+	if (NGIDRegEx.test(clientID)) return true; return false;
 }
 
 if(clientCountry === "GM"){
 	clientID = clientID.toString().replace(" ","");
-var GMIDRegEx = /^[0-9]{11}/;
-if (GMIDRegEx.test(clientID)) return true; return false;
+	var GMIDRegEx = /^[0-9]{11}/;
+	if (GMIDRegEx.test(clientID)) return true; return false;
 }
 
 if(clientCountry === "ZA"){
-clientID = clientID.toString().replace(" ","");
-r = /^\d{10}[0-1]\d{2}$/;
-if (! r.test(clientID)) return false;
-n = clientID;
-p1 = parseInt(n[0]) + parseInt(n[2]) + parseInt(n[4]) + parseInt(n[6]) + parseInt(n[8]) + parseInt(n[10]);
-p2 = (parseInt(n[1] + n[3] + n[5] + n[7] + n[9] + n[11]) * 2).toString();
-p3 = 0;
-for (i=0; i < p2.length; i++) {
-p3+= parseInt(p2[i]);
-}
-check = 10 - (p1 + p3).toString()[(p1 + p3).toString().length -1];
-check_char = check > 9 ? check.toString()[1] : check.toString();
-if (check_char != clientID[12]) return false; return true;
+	clientID = clientID.toString().replace(" ","");
+	r = /^\d{10}[0-1]\d{2}$/;
+	if (! r.test(clientID)) return false;
+	n = clientID;
+	p1 = parseInt(n[0]) + parseInt(n[2]) + parseInt(n[4]) + parseInt(n[6]) + parseInt(n[8]) + parseInt(n[10]);
+	p2 = (parseInt(n[1] + n[3] + n[5] + n[7] + n[9] + n[11]) * 2).toString();
+	p3 = 0;
+	for (i=0; i < p2.length; i++) {
+	p3+= parseInt(p2[i]);
+	}
+	check = 10 - (p1 + p3).toString()[(p1 + p3).toString().length -1];
+	check_char = check > 9 ? check.toString()[1] : check.toString();
+	if (check_char != clientID[12]) return false; return true;
 }
 
 }
