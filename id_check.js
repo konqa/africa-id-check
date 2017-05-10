@@ -59,6 +59,7 @@ if (clientCountry === 'ZW'){
 	// Verify letter - Queue Number
 	queueNumber = clientID.slice(2, -3);
 	console.log("Unique Identifier is " + queueNumber);
+
 	//console.log("Alphabet check letter is " + queueNumber % 23);
 
 }
