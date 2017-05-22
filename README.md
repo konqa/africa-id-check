@@ -6,7 +6,7 @@ Each country in Africa has its own way of uniquely identifying its citizens and 
 
 This project aims to create an application where the user can punch in an ID number, select the country and the result will tell the user if the supplied ID number is in a valid format for the specified country.
 
-###Case: Zimbabwe
+### Case: Zimbabwe
 
 Zimbabwean ID number follows this format: **CC-NNNNNNN AVV**.
 * The first two digits (CC) represent the district in which the applicant resides or registered for the national document.
