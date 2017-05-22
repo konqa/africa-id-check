@@ -105,9 +105,6 @@ var clientCountry1 = 'ZW';
 var clientID2 = '8207165128086';
 var clientCountry2 = 'ZA';
 
-var clientID3 = '82071651280';
-var clientCountry3 = 'NG';
-
 translateID(clientID1, clientCountry1);
 
 translateID(clientID2, clientCountry2);
