@@ -21,7 +21,7 @@ So when a user punches an ID number such as 23-5252121 T56, the application will
 
 To make the application more useful, it will also give the user the district (2 digit Code) where the ID was physically collected and the village of origin (2 digit Code) of the ID holder. Work is in place to obtain the actual district and village names.
 
-###Case: South Africa
+### Case: South Africa
 
 A South African ID number is a 13-digit number which is defined by the following format: **YYMMDDSSSSCAZ**.
 
@@ -40,6 +40,6 @@ So when a user enters an ID number and selects South Africa, if the ID number is
 >This as a valid South African ID number.
 >The client is a female South African citizen who was born on 16 June 1972."
 
-###Case: Rest of Africa
+### Case: Rest of Africa
 
 Currently working on obtaining formats and meanings of other African ID numbers.
