@@ -16,10 +16,9 @@ Zimbabwean ID number follows this format: **CC-NNNNNNN AVV**.
 
 So when a user punches an ID number such as 23-5252121 T56, the application will respond with the message:
 
-> This as a valid Zimbabwean ID number formation.
-> The client is from Zaka village.
+> This as a valid Zimbabwean ID number for a resident of Hwange district who originates from Zaka village.
 
-To make the application more useful, it will also give the user the district (2 digit Code) where the ID was physically collected and the village of origin (2 digit Code) of the ID holder. Work is in place to obtain the actual district and village names.
+To make the application more useful, it will also give the user the district (2 digit Code) where the ID holder is registered and the village of origin (2 digit Code) of the ID holder. Work is in place to obtain the actual district and village names.
 
 ### Case: South Africa
 
@@ -37,8 +36,7 @@ The graphic below details the different sections of an ID number, based on the f
 
 So when a user enters an ID number and selects South Africa, if the ID number is valid as per above formation the response from the application will be:
 
->This as a valid South African ID number.
->The client is a male South African citizen who was born on 23 January 1988."
+>The client is a valid South African ID number for a male South African citizen who was born on 23 January 1988."
 
 ### Case: Rest of Africa
 
