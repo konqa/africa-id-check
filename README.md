@@ -2,9 +2,9 @@
 
 **A system to verify and translate African National Identity Numbers.**
 
-Each country in Africa has its own way of uniquely identifying its citizens and residents mostly from birth by use of an ID number. These ID numbers follow a different syntax or formation, country by country.
+Each country in Africa has its own way of uniquely identifying its citizens and residents mostly from birth by use of an ID number. These ID numbers follow a unique syntax or format, country by country. The sets of letters and numbers in the ID represent certain detail about the ID holder and the meanings of such are largely in the public domain.
 
-This project aims to create an application where the user can punch in an ID number, select the country and the result will tell the user if the supplied ID number is in a valid format for the specified country.
+This project aims to create an application where the user can punch in an ID number, select the country and the result will tell the user if the supplied ID number is in a valid format for the specified country and also give meaning of the ID.
 
 ### Case: Zimbabwe
 
