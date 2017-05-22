@@ -46,27 +46,37 @@ function translateID(clientID, clientCountry){
 
 if (clientCountry === 'ZW'){
 
-	console.log(clientID);
+//	console.log(clientID);
+
+    if(validateID(clientID1, clientCountry1)){
 
 	// District where ID was collected
 	collectionDistrict = clientID.slice(0, 2);
-	console.log("ID was collected in District " + collectionDistrict);
+//	console.log("ID was collected in District " + collectionDistrict);
 
 	// Village of origin, usually from the paternal side
 	familyDistrict = clientID.slice(-2);
-	console.log("Client originates from Village " + familyDistrict);
+// console.log("Client originates from Village " + familyDistrict);
 
 	// Verify letter - Queue Number
 	queueNumber = clientID.slice(2, -3);
-	console.log("Unique Identifier is " + queueNumber);
+//	console.log("Unique Identifier is " + queueNumber);
+
+	console.log(clientID + " is as a valid Zimbabwean ID number for a resident of " + collectionDistrict + " district who originates from " + familyDistrict + " village.");
 
 	//console.log("Alphabet check letter is " + queueNumber % 23);
+
+    } else {
+	console.log("This is not a valid Zimbabwean ID Number.");
+    }
 
 }
 
 else if (clientCountry === 'ZA'){
 
-	console.log(clientID);
+//	console.log(clientID);
+
+  if(validateID(clientID2, clientCountry2)){
 
 	// Date of Birth
 	var yob = clientID.slice(0, 2);
@@ -79,9 +89,11 @@ else if (clientCountry === 'ZA'){
 	var clientGender = (gender > 4) ? "Female" : "Male";
 	var clientStatus = (status) ? "South African" : "Permanent Resident";
 
-	console.log("Client was born on " + dob + "-" + mob + "-" + yob);
-	console.log("Client is " + clientGender);
-	console.log("Client is a " + clientStatus);
+	console.log(clientID + " is a valid South African ID number for a " + clientGender + " " + clientStatus + " who was born on " + dob + "-" + mob + "-" + yob + ".");
+
+    } else {
+	console.log("This is not a valid South African ID Number.");
+    }
 
 }
 
@@ -99,9 +111,3 @@ var clientCountry3 = 'NG';
 translateID(clientID1, clientCountry1);
 
 translateID(clientID2, clientCountry2);
-
-if(validateID(clientID2, clientCountry2)){
-	console.log("This is a valid South African ID Number.");
-} else {
-	console.log("This is not a valid South African ID Number.");
-}

@@ -36,7 +36,7 @@ The graphic below details the different sections of an ID number, based on the f
 
 So when a user enters an ID number and selects South Africa, if the ID number is valid as per above formation the response from the application will be:
 
->The client is a valid South African ID number for a male South African citizen who was born on 23 January 1988."
+> The is a valid South African ID number for a male South African citizen who was born on 23 January 1988."
 
 ### Case: Rest of Africa
 
