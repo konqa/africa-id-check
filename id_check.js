@@ -62,9 +62,9 @@ if (clientCountry === 'ZW'){
 	queueNumber = clientID.slice(2, -3);
 //	console.log("Unique Identifier is " + queueNumber);
 
-	console.log(clientID + " is as a valid Zimbabwean ID number for a resident of " + collectionDistrict + " district who originates from " + familyDistrict + " village.");
+	console.log(clientID + " is as a valid Zimbabwean ID number for a resident of " + collectionDistrict + " district whose paternal parent originates from " + familyDistrict + " village.");
 
-	//console.log("Alphabet check letter is " + queueNumber % 23);
+	// console.log("Alphabet check letter is " + queueNumber % 23);
 
     } else {
 	console.log("This is not a valid Zimbabwean ID Number.");
@@ -79,9 +79,7 @@ else if (clientCountry === 'ZA'){
   if(validateID(clientID2, clientCountry2)){
 
 	// Date of Birth
-	var yob = clientID.slice(0, 2);
-	var mob = clientID.slice(2, 4);
-	var dob = clientID.slice(4, 6);
+	var dob = { year:clientID.slice(0, 2), month:clientID.slice(2, 4), date:clientID.slice(4, 6) };
 
 	var gender = clientID.slice(7, 8);
 	var status = clientID.slice(10, 11);
@@ -89,10 +87,12 @@ else if (clientCountry === 'ZA'){
 	var clientGender = (gender > 4) ? "Female" : "Male";
 	var clientStatus = (status) ? "South African" : "Permanent Resident";
 
-	console.log(clientID + " is a valid South African ID number for a " + clientGender + " " + clientStatus + " who was born on " + dob + "-" + mob + "-" + yob + ".");
+	console.log(clientID + " is a valid South African ID number for a " + clientGender + " " + clientStatus + " who was born on " + dob["date"] + " " + dob["month"] + " " + dob["year"] + ".");
 
     } else {
+
 	console.log("This is not a valid South African ID Number.");
+
     }
 
 }
