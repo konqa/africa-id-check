@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <style>
+    body{
+      margin-top:70px;
+      background:#333;
+      color:#fff;
+    }
+  </style>
+  <title>Africa ID</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h1 class="display-4 text-center mb-3">Africa ID</h1>
+        <form>
+          <div class="form-group">
+            <input
+            id="IDInput"
+            type="text"
+            class="form-control form-control-lg" placeholder="Enter ID..."
+            >
+          </div>
+        </form>
+        <div id="output">
+          <div class="card card-primary mb-2">
+            <div class="card-block">
+              <h5>Date of Birth:</h5>
+              <div id="dobOutput"></div>
+            </div>
+          </div>
+
+          <div class="card card-success mb-2">
+            <div class="card-block">
+              <h5>Gender:</h5>
+              <div id="genderOutput"></div>
+            </div>
+          </div>
+
+          <div class="card card-danger mb-2">
+            <div class="card-block">
+              <h5>Status:</h5>
+              <div id="statusOutput"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('output').style.visibility = 'hidden';
+    document.getElementById('IDInput').addEventListener('input', function(e){
+      document.getElementById('output').style.visibility = 'visible';
+
+      let clientID = e.target.value;
+
+      // Date of Birth
+    	let yob = clientID.slice(0, 2);
+    	let mob = clientID.slice(2, 4);
+    	let dob = clientID.slice(4, 6);
+
+      // Gender
+    	let gender = clientID.slice(7, 8);
+      let clientGender = (gender > 4) ? "Female" : "Male";
+
+      // Residency Status
+    	let status = clientID.slice(10, 11);
+    	let clientStatus = (status) ? "South African Citizen" : "South African Permanent Resident";
+
+      document.getElementById('dobOutput').innerHTML = dob + "-" + mob + "-" + yob;
+      document.getElementById('genderOutput').innerHTML = clientGender;
+      document.getElementById('statusOutput').innerHTML = clientStatus;
+
+    });
+  </script>
+</body>
+</html>
