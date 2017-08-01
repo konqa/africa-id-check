@@ -48,7 +48,7 @@ if (clientCountry === 'ZW'){
 
 //	console.log(clientID);
 
-    if(validateID(clientID1, clientCountry1)){
+  if(validateID(clientID1, clientCountry1)){
 
 	// District where ID was collected
 	collectionDistrict = clientID.slice(0, 2);
