@@ -1,4 +1,4 @@
-// Validate ID
+// Validate ID Number
 
 function validateID(clientID, clientCountry) {
 
@@ -40,7 +40,7 @@ if(clientCountry === "ZA"){
 
 }
 
-// Translate ID
+// Translate ID Number
 
 function translateID(clientID, clientCountry){
 
